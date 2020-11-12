@@ -40,7 +40,7 @@ const exampleEmbed = {
 
 	],
 	footer: {
-		text: "This bot is made by @MaxxCypress"
+		text: "This bot is made by @MaxxCypress"		
 	},
 };
 
@@ -49,7 +49,7 @@ module.exports = {
 	name: "help",
 	description: "this is the help command!",
 	execute(message, args) {
-		message.channel.send("I will DM you about that, please standby.")
+		message.reply("I will DM you about that, please standby.")
 		message.author.send({ embed: exampleEmbed });
 	}
 }

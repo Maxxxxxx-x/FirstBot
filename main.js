@@ -1,8 +1,26 @@
 const Discord = require('discord.js');
 const fs = require('fs');
-const { prefix, token, version, botName } = require('./config.json');
-//const onlineEmbed = require('./onlineEmbed.json'}
-//const offlineEmbed = require('./offlineEmbed,json')
+const { prefix, version, botName } = require('./config.json');
+
+
+const onlineEmbed = {
+	"color": 0x56d916,
+	"title": "Bot is offline",
+	"description": "The bot is currently offline.",
+	"footer": {
+		"text": "This bot is made by @MaxxCypress"
+	}
+}
+
+const offlineEmbed = {
+	"color": 0xFF0000,
+	"title": "Bot is offline",
+	"description": "The bot is currently offline.",
+	"footer": {
+		"text": "This bot is made by @MaxxCypress"
+	}
+}
+
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
 
@@ -15,7 +33,7 @@ for (const file of commandFiles) {
 
 client.once('ready', () => {
 	console.log(`Logged in as ${botName}. \nVersion: ${version} `);
-	//client.channels.get("776434487415930930").send()
+	client.channels.get("776434487415930930").send({ embed: onlineEmbed });
 });
 
 client.on('message', message => {

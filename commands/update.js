@@ -20,7 +20,7 @@ module.exports = {
                 }
             }
         } else {
-            message.channel.send(`<@${tag}> Please specify someone to update.`);
+            message.reply(` Please specify someone to update.`);
         }
     }
 }
