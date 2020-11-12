@@ -1,17 +1,15 @@
-const { prefix, version, botName } = require("./config.json");
-
 const botInfoEmbed = {
 	color: 0xFF0000,
 	title: "Here are my information.",
-	description: `The prefix is ${prefix}.`,
+	description: "The prefix is ``!``.",
 	fields: [
 		{
 			name: "Bot version (Current):",
-			value: `${version}`,
+			value: `0.12`,
 		},
 		{
 			name: "Bot name:",
-			value: `${botName}`
+			value: `MaxxCypress`
         },
 	],
 	footer: {
