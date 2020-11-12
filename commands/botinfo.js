@@ -5,7 +5,7 @@ const botInfoEmbed = {
 	fields: [
 		{
 			name: "Bot version (Current):",
-			value: `0.12`,
+			value: `0.12	`,
 		},
 		{
 			name: "Bot name:",
@@ -20,7 +20,7 @@ const botInfoEmbed = {
 module.exports = {
     name: "botinfo",
     description: "this is the botinfo command!",
-    execute(message, args) {
-        
+	execute(message, args) {
+		message.channel.send({ embed: botInfoEmbed })
     }
 }
