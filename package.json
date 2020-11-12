@@ -1,9 +1,15 @@
 {
-  "name": "discord",
+  "name": "FirstDiscordBot",
   "version": "0.0.0",
-  "description": "discord",
-  "main": "app.js",
+  "description": "First Bot",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js"
+  },
   "author": {
-    "name": ""
+    "name": "MaxxCypress"
   }
+ "dependencies": {
+  "discord.js": "12.4.1",
+  "request": "2.81.0"
 }
