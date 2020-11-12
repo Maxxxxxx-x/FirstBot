@@ -7,7 +7,11 @@ const exampleEmbed = {
 	fields: [
 		{
 			name: "``ping``",
-			value: "This is for you to check if the bot is up and running or not.",
+			value: "This is for you to check if the bot is up and running or not."
+		},
+		{
+			name: "``botinfo``",
+			value: "This is for you to check what is the version, prefix and name of the bot."
 		},
 		{
 			name: "``introduceme``",
