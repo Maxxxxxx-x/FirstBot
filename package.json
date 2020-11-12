@@ -1,0 +1,9 @@
+{
+  "name": "discord",
+  "version": "0.0.0",
+  "description": "discord",
+  "main": "app.js",
+  "author": {
+    "name": ""
+  }
+}
