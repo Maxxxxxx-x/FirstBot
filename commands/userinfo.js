@@ -1,4 +1,3 @@
-const Command = require("../../Structures/Command");
 const moment = require("moment")
 const flags = {
 	DISCORD_EMPLOYEE: "Discord Employee",
