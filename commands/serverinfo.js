@@ -32,17 +32,10 @@ const regions = {
 	'us-south': 'US South'
 };
 
-module.exports = class extends Command {
-
-	constructor(...args) {
-		super(...args, {
-			aliases: ['server', 'guild', 'guildinfo'],
-			description: 'Displays information about the server that said message was run in.',
-			category: 'Information'
-		});
-	}
-
-	async run(message) {
+module.exports = {
+	name: "userinfo",
+	description: "this is the userinfo command!",
+	execute(message, args) {
 		const roles = message.guild.roles.cache.sort((a, b) => b.position - a.position).map(role => role.toString());
 		const members = message.guild.members.cache;
 		const channels = message.guild.channels.cache;
@@ -61,7 +54,6 @@ module.exports = class extends Command {
 				`**❯ Explicit Filter:** ${filterLevels[message.guild.explicitContentFilter]}`,
 				`**❯ Verification Level:** ${verificationLevels[message.guild.verificationLevel]}`,
 				`**❯ Time Created:** ${moment(message.guild.createdTimestamp).format('LT')} ${moment(message.guild.createdTimestamp).format('LL')} ${moment(message.guild.createdTimestamp).fromNow()}`,
-				'\u200b'
 			])
 			.addField('Statistics', [
 				`**❯ Role Count:** ${roles.length}`,
@@ -74,14 +66,12 @@ module.exports = class extends Command {
 				`**❯ Text Channels:** ${channels.filter(channel => channel.type === 'text').size}`,
 				`**❯ Voice Channels:** ${channels.filter(channel => channel.type === 'voice').size}`,
 				`**❯ Boost Count:** ${message.guild.premiumSubscriptionCount || '0'}`,
-				'\u200b'
 			])
 			.addField('Presence', [
 				`**❯ Online:** ${members.filter(member => member.presence.status === 'online').size}`,
 				`**❯ Idle:** ${members.filter(member => member.presence.status === 'idle').size}`,
 				`**❯ Do Not Disturb:** ${members.filter(member => member.presence.status === 'dnd').size}`,
 				`**❯ Offline:** ${members.filter(member => member.presence.status === 'offline').size}`,
-				'\u200b'
 			])
 			.addField(`Roles [${roles.length - 1}]`, roles.length < 10 ? roles.join(', ') : roles.length > 10 ? this.client.utils.trimArray(roles) : 'None')
 			.setTimestamp();
