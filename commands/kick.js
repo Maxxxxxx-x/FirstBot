@@ -4,9 +4,9 @@ module.exports = {
     name: "kick",
     description: "this is the kick command!",
     execute(message, args) {
+        if (!message.member.hasPermission("KICK_MEMBER") || !message.member.hasPermission("ADMINISTRATOR")) return message.reply(" you don't have the permissions to use this command!");
         const { member, mentions } = message;
         let target = mentions.users.first();
-        const tag = message.member.id;
         const kickreason = args.slice(1).join(" ") || "N/A";
         if (target) {
             const targetMember = message.guild.members.cache.get(target.id);
@@ -14,10 +14,10 @@ module.exports = {
                 message.channel.send(`${targetMember} has been kicked. \n Reason : ${kickreason}`);
                 targetMember.kick(targetMember, { kickreason });
             } else {
-                message.channel.send(`<@${tag}>, you cannot kick yourself.`)
+                message.reply(`you cannot kick yourself.`)
             }
         } else {
-            message.channel.send(`<@${tag}> Please specify someone to kick.`);
+            message.reply(`please specify someone to kick.`);
         }
     }
 }
