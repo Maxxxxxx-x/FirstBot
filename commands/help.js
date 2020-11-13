@@ -34,7 +34,7 @@ const exampleEmbed = {
 			value: "This command is used when you are kicking a member. \n ``THIS COMMAND IS RESTRICTED TO SERVER MODERATORS.``"
 		},
 		{
-			name: "``ban (WIP)``",
+			name: "``ban (EARLY_STAGES)``",
 			value: "This command is used when you are banning a member. \n ``THIS COMMAND IS RESTRICTED TO SERVER ADMINISTRATORS.``"
 		},
 		{
