@@ -5,7 +5,7 @@ const botInfoEmbed = {
 	fields: [
 		{
 			name: "Prefix:",
-			value: ```${prefix}```
+			value: `${prefix}`
 		},
 		{
 			name: "Bot version (Current):",
