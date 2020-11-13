@@ -12,13 +12,13 @@ module.exports = {
         if (target) {
             const targetMember = message.guild.members.cache.get(target.id);
             if (targetMember != message.author) {
-                message.channel.send(`${targetMember} has been kicked. \n Reason : ${banReason}`);
+                message.channel.send(`${targetMember} has been ban. \n Reason : ${banReason}`);
                 targetMember.ban(targetMember, { banReason });
             } else {
                 message.reply(`you cannot kick yourself.`);
             }
         } else {
-            message.reply(`Please specify someone to kick.`);
+            message.reply(`Please specify someone to ban.`);
         }
     }
 }
